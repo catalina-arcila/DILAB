@@ -1,0 +1,52 @@
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+#Capa_1 {
+    transform: translate(0, -5px);     
+    max-width: 750px;         
+}
+
+#flecha_valid {
+    opacity: 0%;
+    cursor: pointer;
+}
+
+#flecha_colab {
+    opacity: 0%;
+    cursor: pointer;
+}
+
+#flecha_elab {
+    opacity: 0%;
+    cursor: pointer;
+}
+
+#flecha_valid:hover{
+    opacity: 100%;
+}
+
+#VALID_text {
+    cursor: pointer;
+}
+
+#flecha_colab:hover {
+    opacity: 100%;
+}
+
+#COLAB_text {
+    cursor: pointer;
+}
+
+#flecha_elab:hover {
+    opacity: 100%;
+}
+
+#COLAB_text {
+    cursor: pointer;
+}
