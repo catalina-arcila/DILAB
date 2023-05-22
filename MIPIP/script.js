@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+
 // Obtener referencias a los polígonos deseados por su id
 const flechaColab = document.getElementById('flecha_colab');
 const flechaValid = document.getElementById('flecha_valid');

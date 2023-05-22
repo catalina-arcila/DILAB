@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <script src="/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+
     <title>MIPIP</title>
 </head>
 <body>
+
+    <div id="nav-placeholder">
+
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav-bar.html");
+        });
+        </script>
+
+
     <div class="contenedor">
         <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002.97 984.6">
             <defs>
                 <style>
                 .cls-1 {
-                    fill: #60c683;
+                    fill: #48C78E;
                     opacity: 0.8;
                 }
 
@@ -117,9 +130,63 @@
     </svg>
 
 <div id="infoDiv_colab" style="display: none;">
-    <h2>Colaboración interdisciplinaria</h2>
-    <p>Información adicional sobre...</p>
-    <button id="backButtonColab">Volver atrás</button>
+    <div class="box has-background-success">
+        <h2 class="title" >Colaboración interdisciplinaria</h2>
+    </div>
+    <div class="tile is-ancestor">
+        
+        <div class="tile is-parent"  >
+          <div class="tile is-child box">
+            <p class="title">Metodología Ágil</p>
+            <div class="content has-text-left">
+                <li>Roles: Scrum define tres roles principales: el <span class="highlight1"> Product Owner </span> 
+                    , el <span class="highlight2"> Scrum Master </span> y el <span class="highlight3"> Equipo de Desarrollo </span>.
+                     <span class="highlight1"> El Product Owner es responsable de definir y priorizar los requisitos del proyecto</span> 
+                     <span class="highlight2">el Scrum Master se encarga de facilitar el proceso</span>
+                     <span class="highlight3">y el equipo de desarrollo es responsable de entregar el trabajo. </span>  y el equipo de desarrollo es responsable de entregar el trabajo.</li> 
+
+                <li>Artefactos: Scrum utiliza tres artefactos principales para gestionar el trabajo. El primero es el Producto Backlog, que es una lista priorizada de todos los requisitos o funcionalidades del proyecto. El segundo es el Sprint Backlog, que es una lista de tareas seleccionadas del Producto Backlog para un sprint específico. Por último, está el Incremento del Producto, que es la versión funcional del producto al final de cada sprint.</li>    
+                <li>Eventos: Scrum establece varios eventos para gestionar el tiempo y el progreso del proyecto. El evento principal es el Sprint, que es un período de tiempo fijo en el que el equipo de desarrollo trabaja para entregar un incremento del producto. También hay eventos como la Planificación del Sprint, la Revisión del Sprint y la Retrospectiva del Sprint, que ayudan al equipo a planificar, revisar y mejorar su trabajo.</li>    
+                <li>Sprints: Un sprint es un período de tiempo, generalmente de una a cuatro semanas, en el que el equipo de desarrollo trabaja en la entrega de un incremento del producto. Durante el sprint, el equipo se compromete a completar las tareas seleccionadas del Sprint Backlog y realiza reuniones diarias de seguimiento llamadas Daily Scrum.</li>    
+                <li> Principios: Scrum se basa en una serie de principios fundamentales, como la transparencia, la inspección y la adaptación. La transparencia implica que toda la información relevante del proyecto debe ser visible para todos los miembros del equipo. La inspección se refiere a revisar y evaluar el trabajo realizado, mientras que la adaptación implica realizar ajustes y mejoras continuas en función de los resultados de la inspección.</li>      
+            </div>
+            <h5>Más información:</h5>
+            <div class="columns">
+                
+                <div class="column"></div>
+                <div class="column">
+                  <button onclick="window.open('https://www.tenstep.ec/portal/images/pdfs/Suscripciones_TenStep/Silver/SCRUMstudy_GUIA_SBOK_espanol.pdf')" class="button is-responsive">Guía Scrum 1</button>
+                </div>
+                <div class="column">
+                    <button onclick="window.open('https://openaccess.uoc.edu/bitstream/10609/17885/1/mtrigasTFC0612memoria.pdf')" class="button is-responsive">Guía Scrum 2</button>
+                </div>
+                <div class="column">
+                    <button onclick="window.open('https://openaccess.uoc.edu/bitstream/10609/17885/2/mtrigasTFC0612presentacion.pdf')" class="button is-responsive">Guía Scrum 3</button>
+                </div>
+                <div class="column"></div>
+              </div>
+          </div>
+        </div>
+        <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box">
+              <p class="title">Accion-Oriented Planning</p>
+              <div class="content has-text-left">
+                <p>La Planificación Orientada a la Acción utiliza un método de "Medir-Testear-Refinar" para evaluar opciones en un entorno de bajo riesgo con la máxima aportación de los miembros del público y otros responsables urbanos. Con estos tres pasos, se prueban y evalúan iniciativas provisionales para informar sobre la toma de decisiones más permanentes y refinadas.</p>
+              </div>
+              <button class="button is-responsive">Ver más</button>
+              
+            </div>
+            <div class="tile is-child box">
+                <p class="title">Confianza en los equipos</p>
+                <div class="content has-text-left">
+                  <p><strong>Una taxonomía de los factores percibidos de confiabilidad y los comportamientos</strong> ¿Realmente necesitamos reuniones personales para desarrollar confianza dentro de los equipos? ¿Qué factores impactan en la aparición de la confianza en los equipos presenciales y virtuales? ¿Cómo interactúan los equipos con alta confianza en comparación con los equipos con baja confianza en el equipo? ...</p>
+                </div>
+                <button class="button is-responsive">Ver más</button>
+            </div>
+          </div>
+      </div>
+    <button class="button is-success" id="backButtonColab">Volver atrás</button>
+    
   </div>          
 
   <div id="infoDiv_elab" style="display: none;">
