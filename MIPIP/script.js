@@ -21,10 +21,10 @@ let flechaSeleccionada = '';
 flechaColab.addEventListener('click', function() {
     hacerZoom('colab');
   });
-  flechaValid.addEventListener('click', function() {
+flechaValid.addEventListener('click', function() {
     hacerZoom('valid');
   });
-  flechaElab.addEventListener('click', function() {
+flechaElab.addEventListener('click', function() {
     hacerZoom('elab');
   });
 
@@ -42,12 +42,6 @@ function hacerZoom(flecha) {
     const svgTop = rect.top;
     const svgLeft = rect.left;
 
-    // Calcular la posición del polígono clicado
-    // const poligonoRect = this.getBoundingClientRect();
-    // const poligonoWidth = poligonoRect.width;
-    // const poligonoHeight = poligonoRect.height;
-    // const poligonoTop = poligonoRect.top;
-    // const poligonoLeft = poligonoRect.left;
 
     // Calcular el factor de zoom
     const factorZoom = 4; // Ajusta este valor para controlar el nivel de zoom
@@ -115,6 +109,51 @@ function mostrarInformacion() {
     // Eliminar el evento clic del botón de volver atrás
     backButton.removeEventListener('click', volverAtras);
   }
+
+
+
+
+
+
+
+  // Mostrar div de info por paso //
+
+  const botonItem1 = document.getElementById('verMas1');
+  const botonItem2 = document.getElementById('verMas2');
+  const botonItem3 = document.getElementById('verMas3');
+  const botonItem4 = document.getElementById('verMas4');
+
+  const infoItem1 = document.getElementById('infoItem1');
+  const infoItem2 = document.getElementById('infoItem2');
+
+  botonItem1.addEventListener('click', function() {
+    mostrarInfoItem('item1');
+  });
+  botonItem2.addEventListener('click', function() {
+    mostrarInfoItem('item2');
+  });
+  botonItem3.addEventListener('click', function() {
+    mostrarInfoItem('item3');
+  });
+  botonItem4.addEventListener('click', function() {
+    mostrarInfoItem('item3');
+  });
+
+  function mostrarInfoItem(item) {
+    infoItem1.style.display = 'none';
+    infoItem2.style.display = 'none';
+    if (item == 'item1') {
+      infoItem1.style.display = 'block';
+    } else if (item == 'item2') {
+      infoItem2.style.display = 'block';
+    }
+  }
+  
+
 });
+
+
+
+
 
 
