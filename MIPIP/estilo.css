@@ -109,7 +109,16 @@
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     padding: 5px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+/* #item3 {
+    border: 5px solid #48C78E;
+    padding: 4px;
+} */
 
 .subItem {
     border-radius: 10px 10px 0 0;
@@ -119,6 +128,50 @@
     color: white;
 }
 
+#descripcion1 {
+    margin-top: 8px;
+}
+
+#descripcion2 {
+    margin-top: 8px;
+}
+
+#descripcion3 {
+    margin-top: -16px;
+}
+
+#descripcion4 {
+    margin-top: -16px;
+}
+
+.descItem {
+    margin: 0 8px 8px 8px;
+}
+
+#verMas1 {
+    padding-top: 8px;
+}
+
+#verMas2 {
+    padding-top: 8px;
+}
+
+#verMas3 {
+    border-radius: 0 0 0 10px;
+    flex: 1;
+    padding-top: 8px;
+}
+
+#verMas4 {
+    padding-top: 8px;
+}
+
+#herramienta {
+    border-radius: 0 0 10px 0;
+    flex: 1;
+    padding-top: 8px;
+}
+
 .botonVerMas {
     border-radius: 0 0 10px 10px;
     margin: 0 -5px -5px -5px;
@@ -126,9 +179,59 @@
     cursor: pointer;
     text-align: center;
     height: 40px;
-    padding-top: 8px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.botonVerMas:hover {
+#verMas3:hover {
     background-color: #48C78E;
 }
+
+#herramienta:hover {
+    background-color: rgb(216, 35, 216);
+}
+
+#verMas1:hover {
+    background-color: #48C78E;
+}
+#verMas2:hover {
+    background-color: #48C78E;
+}
+#verMas4:hover {
+    background-color: #48C78E;
+}
+
+.contenedorRoles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.roles {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloRol {
+    text-align: center;
+    margin: 5px;
+    font-size: medium;
+}
+
+.logoRol {
+    height: 80px;
+    position: relative;
+    bottom: 80px;
+    right: 130px;
+    margin-bottom: -70px;
+}
+
+
+
+
