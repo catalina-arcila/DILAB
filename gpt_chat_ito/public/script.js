@@ -16,6 +16,10 @@ const backButtonColab = document.getElementById('backButtonColab');
 const backButtonElab = document.getElementById('backButtonElab');
 const backButtonValid = document.getElementById('backButtonValid');
 
+// Boton Popup
+const popupBtn = document.getElementById('popupBtn');
+
+
 // Pasos 1 y 2
 const pasos12 = document.getElementById('descPasos');
 
@@ -135,6 +139,9 @@ function mostrarInformacion() {
       x: "0", // Desplazamiento hacia la izquierda
       duration: 1, // Duración de la animación en segundos
       ease: "power2.inOut", // Efecto de aceleración
+      onComplete: function() {
+        popupBtn.style.zIndex = "9999";
+      }
     });
 
     // Eliminar el evento clic del botón de volver atrás
@@ -183,15 +190,32 @@ function mostrarInformacion() {
 
   // Popup preguntas
 
-  const popupBtn = document.getElementById('popupBtn');
+  // boton popup esta definido arriba
+  const popupPreguntas = document.getElementById('popupPreguntas');
+  const closeBtn = document.getElementById('closeBtn');
 
   popupBtn.addEventListener("click", showPopup);
 
       function showPopup() {
-          var popup = document.getElementById("popup");
-          popup.style.display = "block";
+          popupPreguntas.style.display = "flex";
       }
   
+  
+  closeBtn.addEventListener("click", closePopup);
+
+      function closePopup() {
+        popupPreguntas.style.display = "none";
+      }
+
+  
+
+  // Ir a la página inicial
+
+    const volverInicio = document.getElementById('volverInicio');
+
+    volverInicio.addEventListener('click', function() {
+      window.location.replace('index.html');
+    });
 
 });
 
