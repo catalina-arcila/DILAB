@@ -1,5 +1,61 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+@font-face {
+    font-family: Futura;
+    src: url(recursos/Futura\ Heavy\ font.ttf);
+  }
+
+#descMipip {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+#descPasos {
+    display: flex;
+    flex-direction: column; 
+}
+
+.paso {
+    display: flex;
+    flex-direction: row;
+}
+
+.descPaso {
+    margin-bottom: 13px;
+}
+
+#tituloMipip {
+    color: black;
+    font-size: 40px;
+    font-family: Futura;
+}
+
+#punteo {
+    margin-left: 20px;
+}
+
+#popupBtn {
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
 .contenedor {
     display: flex;
     justify-content: center;
@@ -10,7 +66,8 @@
 
 #Capa_1 {
     transform: translate(0, -5px);     
-    max-width: 700px;         
+    max-width: 700px;    
+    margin-right: -200px;     
 }
 
 #flecha_valid {

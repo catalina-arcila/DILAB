@@ -1,0 +1,61 @@
+
+@font-face {
+    font-family: Futura;
+    src: url(recursos/Futura\ Heavy\ font.ttf);
+  }
+
+body {
+    background-image: url('recursos/Cerro-Renca11.jpg');
+    background-size: cover;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.subContenedor {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 310px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.titulo {
+    font-family: Futura;
+    align-self: left;
+    margin: 20px;
+    color: black;
+    font-size: 50px;
+}
+
+.subTitulo {
+    margin: 20px;
+    margin-top: -14px;
+    font-size: smaller;
+    color: black;
+}
+
+#descripcion {
+    margin: 20px;
+    margin-top: 0px;
+    color: black;
+    font-size: 18px;
+}
+
+.button {
+    width: 100px;
+    align-self: center;
+}
+
+#botonMipip {
+    color: black;
+}
+

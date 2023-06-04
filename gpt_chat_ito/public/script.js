@@ -16,8 +16,11 @@ const backButtonColab = document.getElementById('backButtonColab');
 const backButtonElab = document.getElementById('backButtonElab');
 const backButtonValid = document.getElementById('backButtonValid');
 
-// Ir al ChapGPT
+// Pasos 1 y 2
+const pasos12 = document.getElementById('descPasos');
 
+
+// Ir al ChapGPT
 const botonHazlo = document.getElementById('herramienta');
 
 botonHazlo.addEventListener('click', function() {
@@ -54,11 +57,12 @@ function hacerZoom(flecha) {
 
     // Calcular el factor de zoom
     const factorZoom = 4; // Ajusta este valor para controlar el nivel de zoom
+    const factorMovX = -250 
 
     // Calcular la posición y dimensiones del área de zoom
     const zoomWidth = svgWidth / factorZoom;
     const zoomHeight = svgHeight / factorZoom;
-    const svgCenterX = svgLeft + (svgWidth / 2) - (zoomWidth * 3.3);
+    const svgCenterX = svgLeft + (svgWidth / 2) - (zoomWidth * 3.3) + factorMovX;
     const svgCenterY = svgTop + (svgHeight / 2) - (zoomHeight / 2);
 
     // Aplicar la animación de zoom utilizando GSAP
@@ -71,12 +75,21 @@ function hacerZoom(flecha) {
         ease: Power2.easeInOut,
         onComplete: mostrarInformacion 
   });
+
+    gsap.to(pasos12, {
+      x: "-150%", // Desplazamiento hacia la izquierda
+      duration: 1, // Duración de la animación en segundos
+      ease: "power2.inOut", // Efecto de aceleración
+    });
 }
 
 function mostrarInformacion() {
     // Ocultar el SVG
     const svg = document.querySelector('svg');
     svg.style.display = 'none';
+
+    // Ocultar Pasos 1 y 2
+    pasos12.style.display = 'none';
 
     // Mostrar el div de información
     if (flechaSeleccionada === 'colab') {
@@ -105,6 +118,9 @@ function mostrarInformacion() {
     const svg = document.querySelector('svg');
     svg.style.display = 'block';
 
+    //Mostrar pasos 1 y 2
+    pasos12.style.display = 'flex';
+
     // Volver a la posición y escala original del SVG utilizando GSAP
     gsap.to(svg, {
       duration: 1, // Duración de la animación (en segundos)
@@ -113,6 +129,12 @@ function mostrarInformacion() {
       scale: 1,
       transformOrigin: 'center center',
       ease: Power2.easeInOut
+    });
+
+    gsap.to(pasos12, {
+      x: "0", // Desplazamiento hacia la izquierda
+      duration: 1, // Duración de la animación en segundos
+      ease: "power2.inOut", // Efecto de aceleración
     });
 
     // Eliminar el evento clic del botón de volver atrás
@@ -157,9 +179,22 @@ function mostrarInformacion() {
       infoItem2.style.display = 'block';
     }
   }
+
+
+  // Popup preguntas
+
+  const popupBtn = document.getElementById('popupBtn');
+
+  popupBtn.addEventListener("click", showPopup);
+
+      function showPopup() {
+          var popup = document.getElementById("popup");
+          popup.style.display = "block";
+      }
   
 
 });
+
 
 
 
