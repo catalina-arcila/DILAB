@@ -10,16 +10,24 @@
 <body>
     <div class="container-fluid mb-10 mh-100">
         <div class="sticky-top text-bg-dark">
-            <h1 class="mt-3 mb-3 text-center">Chat-Ito</h1>
+            <h1 class="mt-3 mb-3 text-center">Historias de usuario, requerimientos y tareas</h1>
             <!-- Formulario -->
             <div class="row justify-content-center mt-3">
+                <div>
+                    <p></p>
+                </div>
                 <div class="col-md-8 mb-3 ">
-                    <textarea id="txtPromptInput" class="form-control" rows="2" placeholder="¿En qué te puedo ayudar?"></textarea>
+                    <p>En esta página deberás ingresar las historias de usuarios hechas en la <a download href="blob:https://web.whatsapp.com/2accb670-3998-473f-8f35-51305766c8ec"> PLANTILLA</a> entregada, al apretar el botón generar, con inteligencia artificial, se realizarán recomendaciones sobre los requerimientos de las historias de usuarios, al igual de los objetivos y sus respectivas tareas.</p>
+                    <p>Son libres a realizar modificaciones en lo entregado, ya que, el objetivo es ayudarlos a partir en la creación de estos.</p>
+                    <textarea id="txtPromptInput2" class="form-control" rows="3" placeholder="Escribir la visión del proyecto"></textarea>
+                    <br>
+                    <textarea id="txtPromptInput" class="form-control" rows="10" placeholder="Historia de usuario:"></textarea>
+                    <br>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">    
-                    <button id="btnSend" class="btn btn-success" type="button">Enviar a Chat-Ito</button>   
+                    <button id="btnSend" class="btn btn-success" type="button">Generar</button>   
                     <button id="btnClear" class="btn btn-primary" type="button">Limpiar</button>   
                 </div>
             </div>

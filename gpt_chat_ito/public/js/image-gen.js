@@ -2,6 +2,8 @@
 const btnSend = document.getElementById("btnSend");
 const btnClear = document.getElementById("btnClear");
 const txtPromptInput = document.getElementById("txtPromptInput");
+const txtPromptInput2 = document.getElementById("txtPromptInput2");
+const txtPromptInput3 = document.getElementById("txtPromptInput3");
 const lstResults = document.getElementById("lstResults");
 
 const sizeImgSelected = document.querySelectorAll('input[name="sizeRadioOpt"]');

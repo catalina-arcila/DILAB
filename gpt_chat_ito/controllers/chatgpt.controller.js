@@ -15,7 +15,7 @@ const callChatGpt = async(req = request, res = response)=>{
         let queryObj = {
             model: "gpt-3.5-turbo",
             messages: [{"role":"user", "content": prompt}],
-            max_tokens: 100,
+            max_tokens: 3000,
             temperature:1
         }
 
