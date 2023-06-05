@@ -107,8 +107,7 @@ function mostrarInformacion() {
         backButtonElab.addEventListener('click', volverAtras);
       }
 
-    // Agregar evento clic al botón de volver atrás
-    backButton.addEventListener('click', volverAtras);
+
   }
 
   // Función para volver atrás
