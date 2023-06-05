@@ -2,14 +2,22 @@
 const btnSend = document.getElementById("btnSend");
 const btnClear = document.getElementById("btnClear");
 const txtPromptInput = document.getElementById("txtPromptInput");
+const txtPromptInput2 = document.getElementById("txtPromptInput2");
 const lstResults = document.getElementById("lstResults");
 
 btnSend.addEventListener("click",sendToChatGPT);
 btnClear.addEventListener("click",clearAll);
 
+const string = '';
+const string2 = '';
+const vision = '';
+
 function sendToChatGPT(){
 
-    let prompt = txtPromptInput.value;
+    const string2 = "A partir de la siguiente visión:";
+    const vision = txtPromptInput2.value;
+    const string = ". Necesito que me generes una lista de requerimientos y objetivos, con sus respectivas tareas para su cumplimiento. Lo anterior será realizado por un equipo interdisciplinario que busca satisfacer estas historias de usuario:";
+    const prompt = string2 + vision + string + txtPromptInput.value;
 
     if(!prompt){
         return;
@@ -24,6 +32,7 @@ function sendToChatGPT(){
     })
     .then((response)=>response.json())
     .then((data)=>{
+        console.log(prompt)
         console.log(data.message.content);
         console.log(data.usage);
         const stringParsed = replaceBackticksWithPre(data.message.content);
@@ -35,13 +44,35 @@ function sendToChatGPT(){
 
 }
 
+function transformTableToHTML(tableString) {
+    const tableLines = tableString.trim().split('\n');
+    const header = tableLines[0].split('|').map(cell => cell.trim());
+    const rows = tableLines.slice(2).map(line => line.split('|').map(cell => cell.trim()));
+  
+    let html = '<table>\n<thead>\n<tr>\n';
+    html += header.map(cell => `<th>${cell}</th>\n`).join('');
+    html += '</tr>\n</thead>\n<tbody>\n';
+  
+    rows.forEach(row => {
+      html += '<tr>\n';
+      html += row.map(cell => `<td>${cell}</td>\n`).join('');
+      html += '</tr>\n';
+    });
+  
+    html += '</tbody>\n</table>';
+    words = html.split(/[.,\s]+/);
+    return html;
+  }
+
 function createItem(prompt,message){
-    let item = `<li class="list-group-item d-flex justify-content-between align-items-start">
+    const htmlTable = transformTableToHTML(message);
+    const item = `<li class="list-group-item d-flex justify-content-between align-items-start">
                     <div class="ms-2 me-auto">
-                        <div class="fw-bold">${prompt}</div>
-                        <p>${message}</p>
+                        <p>${htmlTable}</p>
                     </div>
                 </li>`
+    console.log(prompt)
+    console.log(string)
 
     return item;
 }
