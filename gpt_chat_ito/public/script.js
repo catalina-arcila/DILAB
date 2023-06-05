@@ -61,7 +61,7 @@ function hacerZoom(flecha) {
 
     // Calcular el factor de zoom
     const factorZoom = 4; // Ajusta este valor para controlar el nivel de zoom
-    const factorMovX = -250 
+    const factorMovX = -500 
 
     // Calcular la posición y dimensiones del área de zoom
     const zoomWidth = svgWidth / factorZoom;
@@ -140,7 +140,7 @@ function mostrarInformacion() {
       duration: 1, // Duración de la animación en segundos
       ease: "power2.inOut", // Efecto de aceleración
       onComplete: function() {
-        popupBtn.style.zIndex = "9999";
+        location.reload(true)
       }
     });
 
@@ -158,8 +158,6 @@ function mostrarInformacion() {
 
   const botonItem1 = document.getElementById('verMas1');
   const botonItem2 = document.getElementById('verMas2');
-  const botonItem3 = document.getElementById('verMas3');
-  const botonItem4 = document.getElementById('verMas4');
 
   const infoItem1 = document.getElementById('infoItem1');
   const infoItem2 = document.getElementById('infoItem2');
@@ -170,16 +168,11 @@ function mostrarInformacion() {
   botonItem2.addEventListener('click', function() {
     mostrarInfoItem('item2');
   });
-  botonItem3.addEventListener('click', function() {
-    mostrarInfoItem('item3');
-  });
-  botonItem4.addEventListener('click', function() {
-    mostrarInfoItem('item3');
-  });
+
 
   function mostrarInfoItem(item) {
     infoItem1.style.display = 'none';
-    infoItem2.style.display = 'none';
+    // infoItem2.style.display = 'none';
     if (item == 'item1') {
       infoItem1.style.display = 'block';
     } else if (item == 'item2') {

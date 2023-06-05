@@ -8,20 +8,32 @@
 #descMipip {
     position: absolute;
     top: 30px;
-    left: 30px;
-    width: 450px;
+    left: 70px;
+    width: 800px;
     display: flex;
     flex-direction: column;
 }
 
 #descPasos {
     display: flex;
+    flex-direction: row; 
+}
+
+#subDescPasos {
+    display: flex;
     flex-direction: column; 
+    max-width: 450px;
 }
 
 .paso {
     display: flex;
     flex-direction: row;
+}
+
+#paso {
+    display: flex;
+    flex-direction: row;
+    margin-left: 90px;
 }
 
 .descPaso {
@@ -83,7 +95,7 @@
 #Capa_1 {
     transform: translate(0, -5px);     
     max-width: 700px;    
-    margin-right: -200px;     
+    margin-right: -470px;     
 }
 
 #flecha_valid {
@@ -226,16 +238,8 @@
 }
 
 #verMas2 {
-    padding-top: 8px;
-}
-
-#verMas3 {
     border-radius: 0 0 0 10px;
     flex: 1;
-    padding-top: 8px;
-}
-
-#verMas4 {
     padding-top: 8px;
 }
 
@@ -286,7 +290,7 @@
     padding: 20px;
     margin: 10px;
     width: 300px;
-    height: 400px;
+    height: 470px;
     display: flex;
     flex-direction: column;
 }
@@ -305,6 +309,9 @@
     margin-bottom: -70px;
 }
 
+.contenidoRol {
+    margin-left: 10px;
+}
 
 
 
