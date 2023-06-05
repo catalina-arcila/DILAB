@@ -86,4 +86,5 @@ function replaceBackticksWithPre(string) {
 function clearAll(){
     lstResults.innerHTML = "";
     txtPromptInput.value = "";
+    txtPromptInput2.value = "";
 }
