@@ -232,6 +232,8 @@
     margin-bottom: -70px;
 }
 
-
+#loading-message {
+    display: none;
+  }
 
 

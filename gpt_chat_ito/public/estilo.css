@@ -303,5 +303,9 @@
     margin-left: 10px;
 }
 
+#loading-message {
+    display: none;
+  }
+  
 
 

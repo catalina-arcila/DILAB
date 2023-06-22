@@ -1,4 +1,3 @@
-//const html elements
 const btnSend = document.getElementById("btnSend");
 const btnClear = document.getElementById("btnClear");
 const txtPromptInput = document.getElementById("txtPromptInput");
@@ -12,9 +11,10 @@ const string = '';
 const string2 = '';
 const vision = '';
 
+  
 function sendToChatGPT(){
 
-    const string2 = "A partir de la siguiente visión:";
+    const string2 = "A partir de la siguiente visión: ";
     const vision = txtPromptInput2.value;
     const string = ". Necesito que me generes una lista de requerimientos y objetivos, con sus respectivas tareas para su cumplimiento. Lo anterior será realizado por un equipo interdisciplinario que busca satisfacer estas historias de usuario:";
     const prompt = string2 + vision + string + txtPromptInput.value;
@@ -25,6 +25,7 @@ function sendToChatGPT(){
 
     fetch("/api/chatgpt",{
         method: "POST",
+        mode:"no-cors",
         headers: {
             "Content-Type": "application/json"
         },
@@ -65,10 +66,11 @@ function transformTableToHTML(tableString) {
   }
 
 function createItem(prompt,message){
-    const htmlTable = transformTableToHTML(message);
+    var htmlTable = transformTableToHTML(message);
     const item = `<li class="list-group-item d-flex justify-content-between align-items-start">
                     <div class="ms-2 me-auto">
-                        <p>${htmlTable}</p>
+                        <p>${htmlTable}
+                        </p>
                     </div>
                 </li>`
     console.log(prompt)

@@ -7,6 +7,8 @@
     color: white;
 }
 
-/* #sobreNosotros:hover {
-    background-color: ;
-} */
+#loading-message {
+    display: none;
+  }
+
+

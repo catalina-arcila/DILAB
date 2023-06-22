@@ -1,3 +1,8 @@
+.container{
+    background-color: rgb(207, 255, 205);
+    justify-content: center;
+}
+
 #nav {
     background-color: #141414;
 }
@@ -10,3 +15,7 @@
 /* #sobreNosotros:hover {
     background-color: ;
 } */
+
+#loading-message {
+    display: none;
+  }
