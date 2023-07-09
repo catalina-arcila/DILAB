@@ -62,3 +62,12 @@ body {
 #loading-message {
     display: none;
   }
+
+
+#boton_agenda {
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    align-content: center;
+    align-self: center;
+}

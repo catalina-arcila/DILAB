@@ -18,14 +18,23 @@
                 proyecto a los stakeholders, o bien, a los usuarios finales. Para lograr esto, se seguirá un enfoque
                 de Mejora Continua, donde el equipo aprende de sus experiencias.</p>
             <button id="botonMipip" class="button is-success"> Empezar </button>
+           
+                <div class="subContenedor" id="boton_agenda">
+                    <button id="botonAgenda" class="button is-success"> Agenda  </button>
+                </div>
+            
         </div>
             
     </div>
     <script>
         const botonMipip = document.getElementById('botonMipip');
+        const botonAgenda = document.getElementById('botonAgenda');
 
         botonMipip.addEventListener('click', function() {
           window.location.replace('mipip.html');
+        });
+        botonAgenda.addEventListener('click', function() {
+            window.location.replace('agenda.html');
         });
         </script>
 </body>
