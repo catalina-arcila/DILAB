@@ -7,7 +7,7 @@
 
 #descMipip {
     position: absolute;
-    top: 30px;
+    top: 0px;
     left: 70px;
     width: 800px;
     display: flex;
@@ -75,11 +75,66 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+}
+
+#svgPasos {
+    transform: translate(0, -5px);     
+    max-height: 700px; 
+    position: absolute;
+    top: 12%;
+    left: 10%;
+}
+
+.cls-pasos-2 {
+    cursor: pointer;
+}
+
+.cls-pasos-1 {
+    cursor: pointer;
+}
+
+.contenedorPasos {
+    width: 400px;
+    margin: 10px;
+    margin-left: 10px;
+}
+
+#paso1 {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    height: 800px;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(224, 96, 126, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+}
+
+#paso2 {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    height: 800px;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 230, 109, 0.8);
     backdrop-filter: blur(5px);
     z-index: 9999;
 }
@@ -92,15 +147,22 @@
     height: 100vh;
 }
 
-#Capa_1 {
-    transform: translate(0, -5px);     
-    max-width: 700px;    
-    margin-right: -470px;     
+#descColab {
+    display: none;
 }
 
-#flecha_valid {
-    opacity: 0%;
-    cursor: pointer;
+#descElab {
+    display: none;
+}
+
+#descValid {
+    display: none;
+}
+
+#Capa_1 {
+    transform: translate(0, -5px);     
+    max-width: 800px;    
+    margin-right: 0px;     
 }
 
 #flecha_colab {
@@ -113,6 +175,19 @@
     cursor: pointer;
 }
 
+#flecha_valid {
+    opacity: 0%;
+    cursor: pointer;
+}
+
+#flecha_colab:hover {
+    opacity: 100%;
+}
+
+#flecha_elab:hover {
+    opacity: 100%;
+}
+
 #flecha_valid:hover{
     opacity: 100%;
 }
@@ -121,17 +196,12 @@
     cursor: pointer;
 }
 
-#flecha_colab:hover {
-    opacity: 100%;
-}
 
 #COLAB_text {
     cursor: pointer;
 }
 
-#flecha_elab:hover {
-    opacity: 100%;
-}
+
 
 #COLAB_text {
     cursor: pointer;
@@ -140,18 +210,27 @@
 #infoDiv_colab {
     width: 100%;
     height: 100%;
+    margin-top: 50px;
+}
+
+#infoDiv_elab {
+    width: 100%;
+    height: 100%;
     margin: 100px;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 #infoDiv_valid {
     width: 100%;
     height: 100%;
-    margin: 100px;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 #backButtonColab:hover {
+    background-color: #48C78E;
+}
+
+#backButtonElab:hover {
     background-color: #48C78E;
 }
 
@@ -165,7 +244,7 @@
     align-items: baseline;
 }
 
-#caja_titulo {
+.caja_titulo {
     justify-self: center;
     
 }
@@ -174,64 +253,26 @@
     width: 115.81px;
 }
 
-.pasos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.item {
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    padding: 5px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* #item3 {
-    border: 5px solid #48C78E;
-    padding: 4px;
-} */
-
-.subItem {
-    border-radius: 10px 10px 0 0;
-    background-color: #141414;
-    padding: 20px;
-    margin: -5px -5px 0 -5px;
-    color: white;
-}
-
-#descripcion1 {
-    margin-top: 8px;
-}
-
-#descripcion2 {
-    margin-top: 8px;
-}
-
-.descItem {
-    margin: 0 8px 8px 8px;
-}
 
 #verMas1 {
-    padding-top: 8px;
+    margin-left: 100px;
+    cursor: pointer;
 }
 
 #verMas2 {
-    border-radius: 0 0 0 10px;
-    flex: 1;
-    padding-top: 8px;
+    cursor: pointer;
+}
+
+#verMas3 {
+    cursor: pointer;
 }
 
 #herramienta {
-    border-radius: 0 0 10px 0;
-    flex: 1;
-    padding-top: 8px;
+    cursor: pointer;
+}
+
+#flechaElab {
+    cursor: pointer;
 }
 
 .botonVerMas {
@@ -250,21 +291,42 @@
 }
 
 #herramienta:hover {
-    background-color: rgb(216, 35, 216);
+    filter: drop-shadow(0 0 0.3rem #646cffaa);
 }
 
 #verMas1:hover {
-    background-color: #48C78E;
+    filter: drop-shadow(0 0 0.3rem #646cffaa);
 }
 #verMas2:hover {
-    background-color: #48C78E;
+    filter: drop-shadow(0 0 0.3rem #646cffaa);
 }
-#verMas4:hover {
-    background-color: #48C78E;
+#verMas3:hover {
+    filter: drop-shadow(0 0 0.3rem #646cffaa);
+}
+#flechaElab:hover {
+    filter: drop-shadow(0 0 0.3rem #646cffaa);
+}
+
+#bajadaColab {
+    width: 1200px;
+}
+
+.svgParent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .diagramaColab {
-    min-width: 1000px;
+    min-width: 800px;
+    max-width: 1300px;
+    transform: translate(0, -5px); 
+}
+
+.diagramaElab {
+    min-width: 1500px;
+    max-width: 1500px;
     transform: translate(0, -5px); 
 }
 
@@ -306,6 +368,74 @@
 #loading-message {
     display: none;
   }
+
+#infoItem2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.parrafoDesc {
+    padding: 20px;
+    width: 800px;
+    height: 350px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
   
 
 
+/* VALIDACION */
+
+.contenedorValid {
+    display: flex;
+    flex-direction: column;
+}
+
+.tiposValid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+}
+
+.tituloYdesc {
+    display: flex;
+    flex-direction: column;
+}
+
+.graficaValid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin-left: 100px;
+}
+
+.tituloTipo {
+    font-size: 22px;
+    color: black;
+    margin: 100px;
+    margin-right: 0;
+    width: fit-content;
+}
+
+.descripcionValid {
+    font-size: larger;
+    margin-left: 100px;
+    width: 400px;
+    
+}
+
+#diagramaValid {
+    max-width: 1000px;
+}
+
+#diagramaValid2 {
+    margin-left: 50px;
+}
+
+#validExpertos {
+    background-color: #6ca6c153;
+}

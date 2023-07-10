@@ -5,16 +5,24 @@
   }
 
 body {
-    background-image: url('recursos/Cerro-Renca11.jpg');
+    /* background-image: url('recursos/edificioperspectiva.jpg');
     background-size: cover;
+    background-position-x: left; */
+}
+
+.imgFondo {
+    position: fixed;
+    left: 29%;
+    transform: rotate(270deg);
 }
 
 .contenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     height: 100vh;
+    padding-left: 100px;
 }
 
 .subContenedor {
@@ -22,10 +30,7 @@ body {
     flex-direction: column;
     width: 700px;
     height: 310px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    margin-right: -100px;
 }
 
 .titulo {
@@ -47,12 +52,24 @@ body {
     margin: 20px;
     margin-top: 0px;
     color: black;
-    font-size: 18px;
+    font-size: 22px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.subBotones {
+    display: flex;
+    justify-content: left;
 }
 
 .button {
-    width: 100px;
-    align-self: center;
+    width: 200px;
+    margin: 10px;
+    
 }
 
 #botonMipip {

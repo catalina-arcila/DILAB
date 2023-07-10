@@ -20,15 +20,11 @@ const backButtonValid = document.getElementById('backButtonValid');
 const popupBtn = document.getElementById('popupBtn');
 
 
-// Pasos 1 y 2
-const pasos12 = document.getElementById('descPasos');
-
-
 // Ir al ChapGPT
 const botonHazlo = document.getElementById('herramienta');
 
 botonHazlo.addEventListener('click', function() {
-  window.location.replace('chatAPI.html');
+  window.location.href = "https://mipip-herramienta-d6f8ff51940c.herokuapp.com/";
 });
 
 
@@ -49,7 +45,8 @@ function hacerZoom(flecha) {
     flechaSeleccionada = flecha
 
     // Obtener el elemento SVG
-    const svg = document.querySelector('svg');
+    const svg = document.getElementById('Capa_1');
+    const svg2 = document.getElementById('svgPasos');
 
     // Calcular la posición y dimensiones del SVG
     const rect = svg.getBoundingClientRect();
@@ -60,14 +57,15 @@ function hacerZoom(flecha) {
 
 
     // Calcular el factor de zoom
-    const factorZoom = 4; // Ajusta este valor para controlar el nivel de zoom
-    const factorMovX = -500 
+    const factorZoom = 9; // Ajusta este valor para controlar el nivel de zoom
+    const factorMovX = 0;
+    const factorMovY = 1300;
 
     // Calcular la posición y dimensiones del área de zoom
     const zoomWidth = svgWidth / factorZoom;
     const zoomHeight = svgHeight / factorZoom;
     const svgCenterX = svgLeft + (svgWidth / 2) - (zoomWidth * 3.3) + factorMovX;
-    const svgCenterY = svgTop + (svgHeight / 2) - (zoomHeight / 2);
+    const svgCenterY = svgTop + (svgHeight / 2) - (zoomHeight / 2) + factorMovY;
 
     // Aplicar la animación de zoom utilizando GSAP
     gsap.to(svg, {
@@ -80,8 +78,8 @@ function hacerZoom(flecha) {
         onComplete: mostrarInformacion 
   });
 
-    gsap.to(pasos12, {
-      x: "-150%", // Desplazamiento hacia la izquierda
+    gsap.to(svg2, {
+      x: "-350%", // Desplazamiento hacia la izquierda
       duration: 1, // Duración de la animación en segundos
       ease: "power2.inOut", // Efecto de aceleración
     });
@@ -89,11 +87,16 @@ function hacerZoom(flecha) {
 
 function mostrarInformacion() {
     // Ocultar el SVG
-    const svg = document.querySelector('svg');
+    const svg = document.getElementById('Capa_1');
+    const svg2 = document.getElementById('svgPasos');
+    const contenedor = document.getElementById('contenedor');
+    
     svg.style.display = 'none';
+    contenedor.style.display = 'none';
+ ;
 
     // Ocultar Pasos 1 y 2
-    pasos12.style.display = 'none';
+    svg2.style.display = 'none'
 
     // Mostrar el div de información
     if (flechaSeleccionada === 'colab') {
@@ -118,11 +121,13 @@ function mostrarInformacion() {
     infoDivValid.style.display = 'none';
 
     // Mostrar el SVG
-    const svg = document.querySelector('svg');
-    svg.style.display = 'block';
+    const svg = document.getElementById('Capa_1');
+    const svg2 = document.getElementById('svgPasos');
+    const contenedor = document.getElementById('contenedor');
 
-    //Mostrar pasos 1 y 2
-    pasos12.style.display = 'flex';
+    svg.style.display = 'block';
+    svg2.style.display = 'block';
+    contenedor.style.display = 'flex';
 
     // Volver a la posición y escala original del SVG utilizando GSAP
     gsap.to(svg, {
@@ -134,7 +139,7 @@ function mostrarInformacion() {
       ease: Power2.easeInOut
     });
 
-    gsap.to(pasos12, {
+    gsap.to(svg2, {
       x: "0", // Desplazamiento hacia la izquierda
       duration: 1, // Duración de la animación en segundos
       ease: "power2.inOut", // Efecto de aceleración
@@ -171,13 +176,47 @@ function mostrarInformacion() {
 
   function mostrarInfoItem(item) {
     infoItem1.style.display = 'none';
+    infoItem2.style.display = 'none';
     // infoItem2.style.display = 'none';
     if (item == 'item1') {
       infoItem1.style.display = 'block';
     } else if (item == 'item2') {
-      infoItem2.style.display = 'block';
+      infoItem2.style.display = 'flex';
     }
   }
+
+
+  
+  // Popup pasos
+  const popupPaso1 = document.getElementById('paso1');
+  const botonPaso1 = document.getElementsByClassName('cls-pasos-2');
+
+  for(let i = 0; i < botonPaso1.length; i++){
+    botonPaso1[i].addEventListener("click", showPopup1);
+
+        function showPopup1() {
+          if (popupPaso1.style.getPropertyValue("display") == "none") {
+            popupPaso1.style.display = "flex";
+          } else {
+            popupPaso1.style.display = "none";
+          }
+        }
+      };
+  
+  const popupPaso2 = document.getElementById('paso2');
+  const botonPaso2 = document.getElementsByClassName('cls-pasos-1');
+
+  for(let i = 0; i < botonPaso2.length; i++){
+    botonPaso2[i].addEventListener("click", showPopup2);
+
+        function showPopup2() {
+          if (popupPaso2.style.getPropertyValue("display") == "none") {
+            popupPaso2.style.display = "flex";
+          } else {
+            popupPaso2.style.display = "none";
+          }
+        }
+      }
 
 
   // Popup preguntas
@@ -199,6 +238,7 @@ function mostrarInformacion() {
         popupPreguntas.style.display = "none";
       }
 
+
   
 
   // Ir a la página inicial
@@ -209,9 +249,53 @@ function mostrarInformacion() {
       window.location.replace('index.html');
     });
 
-});
+    
+    
+  // Hover ciclo
+    const descColab = document.getElementById('descColab');
+    const descElab = document.getElementById('descElab');
+    const descValid = document.getElementById('descValid');
+    const paso3= document.getElementById('paso3');
+    const descPaso3= document.getElementById('descPaso3');
 
+    const esconderTodo = function(){
+      descColab.style.display = 'none';
+      descElab.style.display = 'none';
+      descValid.style.display = 'none';
+      paso3.style.display = 'none';
+      descPaso3.style.display = 'none';
+    }
 
+    flechaColab.addEventListener('mouseover', function() {
+      esconderTodo()
+      descColab.style.display = 'block';
+    })
+    flechaColab.addEventListener('mouseout', function() {
+      esconderTodo()
+      paso3.style.display = 'block';
+      descPaso3.style.display = 'block';
+    })
+
+    flechaElab.addEventListener('mouseover', function() {
+      esconderTodo()
+      descElab.style.display = 'block';
+    })
+    flechaElab.addEventListener('mouseout', function() {
+      esconderTodo()
+      paso3.style.display = 'block';
+      descPaso3.style.display = 'block';
+    })
+
+    flechaValid.addEventListener('mouseover', function() {
+      esconderTodo()
+      descValid.style.display = 'block';
+    })
+    flechaValid.addEventListener('mouseout', function() {
+      esconderTodo()
+      paso3.style.display = 'block';
+      descPaso3.style.display = 'block';
+    })
+  });
 
 
 
