@@ -97,7 +97,6 @@ function mostrarInformacion() {
 
     // Ocultar Pasos 1 y 2
     svg2.style.display = 'none'
-
     // Mostrar el div de información
     if (flechaSeleccionada === 'colab') {
         infoDivColab.style.display = 'block';
@@ -162,9 +161,11 @@ function mostrarInformacion() {
 
   const botonItem1 = document.getElementById('verMas1');
   const botonItem2 = document.getElementById('verMas2');
+  const botonItem3 = document.getElementById('verMas3');
 
   const infoItem1 = document.getElementById('infoItem1');
   const infoItem2 = document.getElementById('infoItem2');
+  const infoItem3 = document.getElementById('infoItem3');
 
   botonItem1.addEventListener('click', function() {
     mostrarInfoItem('item1');
@@ -172,16 +173,22 @@ function mostrarInformacion() {
   botonItem2.addEventListener('click', function() {
     mostrarInfoItem('item2');
   });
+  botonItem3.addEventListener('click', function() {
+    mostrarInfoItem('item3');
+  });
 
 
   function mostrarInfoItem(item) {
     infoItem1.style.display = 'none';
     infoItem2.style.display = 'none';
+    infoItem3.style.display = 'none';
     // infoItem2.style.display = 'none';
     if (item == 'item1') {
       infoItem1.style.display = 'block';
     } else if (item == 'item2') {
       infoItem2.style.display = 'flex';
+    } else if (item == 'item3') {
+      infoItem3.style.display = 'flex';
     }
   }
 
@@ -295,9 +302,21 @@ function mostrarInformacion() {
       paso3.style.display = 'block';
       descPaso3.style.display = 'block';
     })
+    
+    // diagrama valid
+    const botonComo = document.getElementById('botonComo');
+    const ejemplosValid = document.getElementById('ejemplosValid');
+
+    botonComo.addEventListener("click", mostrarValid);
+
+      function mostrarValid() {
+        if (ejemplosValid.style.getPropertyValue("display") == "none") {
+          ejemplosValid.style.display = "flex";
+        } else {
+          ejemplosValid.style.display = "none";
+        }
+      }
+
+    
   });
-
-
-
-
 

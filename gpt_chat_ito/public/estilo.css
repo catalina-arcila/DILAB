@@ -369,19 +369,32 @@
     display: none;
   }
 
-#infoItem2 {
+.parentParrafoDesc {
     display: flex;
     justify-content: center;
+}
 
+#infoItem3 {
+    flex-wrap: wrap;
 }
 
 .parrafoDesc {
     padding: 20px;
     width: 800px;
-    height: 350px;
+    height: fit-content;
+    min-height: 215px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    margin: 10px;
+}
+
+#tituloPrio{
+    width: fit-content;
+    height: 50px;
+    font-size: large;
+    margin: 10px;
+    padding: 20px;
 }
   
 
@@ -429,13 +442,22 @@
 }
 
 #diagramaValid {
-    max-width: 1000px;
+    max-width: 900px;
 }
 
 #diagramaValid2 {
+    max-width: 900px;
     margin-left: 50px;
 }
 
 #validExpertos {
     background-color: #6ca6c153;
+}
+
+#botonComo {
+    cursor: pointer;
+}
+
+#AOP {
+    color: #48C78E;;
 }
